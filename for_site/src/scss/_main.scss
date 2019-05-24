@@ -1,0 +1,267 @@
+.main-section {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	padding: 35px 40px 140px;
+
+	.main-title-wrapper {
+		display: flex;
+		align-items: center;
+		margin-bottom: 40px;
+	}
+
+	&__title {
+		font-size: 30px;
+		font-weight: 300;
+		line-height: 1.1;
+		text-transform: capitalize;
+	}
+
+	.main-title-btn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-decoration: none;
+		font-size: 25px;
+		color: #fff;
+		width: 45px;
+		height: 45px;
+		border-radius: 50%;
+		background-color: $col-green;
+		margin-right: 25px;
+	}
+
+	.main-body {
+		max-width: 1275px;
+		min-height: 590px;
+		background-color: #fff;
+		box-shadow: 0 0 40px rgba(210,216,222,.8);
+	}
+
+	.main-block {
+		display: flex;
+		width: 100%;
+
+		&__left {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		width: 100%;
+		max-width: 260px;
+		height: 290px;
+		background-color: #c4c4c4;
+		margin-right: 30px;
+
+		@media all and (max-width: 1080px) {
+			max-width: 210px;
+			height: 240px;
+		}
+
+			.btn-reset {
+				width: 40px;
+				height: 40px;
+				background: $col-red url("../img/cross.svg") no-repeat center;
+				border: none;
+			}
+
+			.point-map {
+				width: 40px;
+				height: 40px;
+				background: #fff url("../img/point.svg") no-repeat center;
+				align-self: flex-end;
+			}
+		}
+
+		&__middle {
+			padding-top: 30px;
+			width: 100%;
+
+			@media all and (max-width: 1080px) {
+				padding-top: 15px;
+			}
+		}
+
+		&__title {
+			font-size: 20px;
+			font-weight: 700;
+			margin-bottom: 15px;
+
+			@media all and (max-width: 1080px) {
+				margin-bottom: 10px;
+			}
+		}
+
+		&__text {
+			font-size: 13px;
+			color: $col-txt-gray;
+			margin-bottom: 25px;
+
+			@media all and (max-width: 1080px) {
+				margin-bottom: 15px;
+			}
+		}
+
+		&__text-language {
+			font-size: 12px;
+			font-style: italic;
+			font-weight: 600;
+			color: $col-txt-gray;
+			margin-bottom: 70px;
+
+			@media all and (max-width: 1080px) {
+				margin-bottom: 25px;
+			}
+
+			@media all and (min-width: 1081px) and (max-width: 1250px) {
+				margin-bottom: 60px;
+			}
+
+			& > * {
+				font-weight: 700;
+				font-style: normal;
+				color: $col-dark;
+			}
+		}
+
+		&__buttons {
+			display: flex;
+			flex-wrap: wrap;
+			width: 100%;
+			max-width: 640px;
+
+			.language-label {
+				font-size: 12px;
+				font-weight: 600;
+				font-style: italic;
+				letter-spacing: .6px;
+				line-height: 1.9;
+				padding-left: 10px;
+			}
+
+			.input-email-wrapper {
+			    display: flex;
+			    flex-direction: column;
+			    margin-right: 20px;
+			}
+
+			.button-wrapper {
+				position: relative;
+			}
+
+			.button-tick {
+			   @include inputEmail(12px, #fff, 200px, $col-green);
+			}
+
+			.tick {
+				content: url("../img/tick.svg");
+		    	@include marks;
+			    right: 3px;
+			    padding: 6px 0 0 6px;
+		    }
+
+		::-webkit-input-placeholder {color: #fff;}
+		::-moz-placeholder          {color:  #fff;}
+		:-moz-placeholder           {color:  #fff;}
+		:-ms-input-placeholder      {color:  #fff;}
+
+
+			.email-resend {
+				@include inputEmail(12px, #fff, 135px, $col-red);
+				position: absolute;
+			    top: 0;
+			    left: 0;
+			}
+
+			.button-resend {
+				@include inputEmail(10px, $col-dark, 205px, #ebeced);
+				font-weight: 700;
+			    text-transform: uppercase;
+			    text-align: right;
+			    padding-left: 0;
+			    padding-right: 15px;
+
+			    & + .exclam_mark {
+				@include marks;
+			    right: 73px;
+				}
+			}
+
+			.button-thd {
+				@include inputEmail(12px, #fff, 155px, $col-red);
+
+				 & + .exclam_mark {
+			    	@include marks;
+			    	right: 3px;
+			    }
+			}
+		}
+
+		&__right {
+			margin-left: auto;
+		}
+
+		&__time {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+			color: #fff;
+			width: 125px;
+			height: 125px;
+			background-color: #2b2609;
+			position: relative;
+			padding: 10px;
+
+			@media all and (max-width: 1080px) {
+				height: 100px;
+			}
+
+			.time {
+				font-size: 24px;
+				font-weight: 300;
+			}
+
+			.data {
+				font-size: 12px;
+				font-weight: 600;
+				color: #4c472e;
+			}
+		}
+
+		.start {
+			padding-bottom: 35px;
+
+			&::after {
+				content: " ";
+				display: block;
+				position: absolute;
+				z-index: 1;
+				bottom: -32%;
+				right: 1%;
+				border-left: 62px solid transparent;
+			    border-top: 40px solid #2b2609;
+			    border-right: 62px solid transparent;
+
+			    @media all and (max-width: 1080px) {
+					bottom: -40%;
+					right: 0;
+				}
+			}
+		}
+
+		.finish {
+			padding-top: 75px;
+			background-color: $col-gray;
+			color: initial;
+			height: 165px;
+
+			@media all and (max-width: 1080px) {
+				height: 145px;
+			}
+
+			.data {
+				color: #b6b9bf;
+			}
+		}
+	}
+}

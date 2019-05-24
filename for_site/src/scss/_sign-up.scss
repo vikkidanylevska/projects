@@ -1,0 +1,99 @@
+.sign-up-section {
+	background-color: $col-gray;
+}
+
+.sign-up {
+
+	&__input-wrapper {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.email-label {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		width: 65px;
+		margin-bottom: 5px;
+	}
+
+	&__label {
+		font-size: 14px;
+		font-weight: 700;
+		letter-spacing: .5px;
+		text-transform: capitalize;
+		margin-bottom: 10px;
+	}
+
+	&__input {
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 1.5;
+		letter-spacing: .8px;
+		width: 100%;
+		max-width: 400px;
+		padding: 15px 20px;
+		margin-bottom: 35px;
+		background-color: $col-gray;
+		border: none;
+	}
+
+	.select-wrapper {
+		position: relative;
+
+		&::after {
+			content: " ";
+			position: absolute;
+			border: 3px solid $col-dark;
+			border-left-color: transparent;
+			border-top-color: transparent;
+			transform: rotate(45deg) translateY(-100%);
+			top: 30%;
+			right: 9%;
+			pointer-events: none;
+		}
+
+		.select {
+			font-family: 'Open Sans', sans-serif;
+			overflow: hidden;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			cursor: pointer;
+		}
+	}
+
+	input[type=checkbox] {
+	    display: none;
+	}
+
+	input[type=checkbox] + label::before {
+	    content: "\2713";
+	    color: transparent;
+	    background-color: $col-green;
+	    display: inline-block;
+	    font-size: 11px;
+	    height: 15px;
+	    width: 15px;
+	    text-align: center;
+	    cursor: pointer;
+	    margin-right: 13px;
+	}
+
+	input[type=checkbox]:checked + label::before {
+	    color: white;
+	}
+
+	.check__wrapper {
+		font-size: 13px;
+		letter-spacing: .5px;
+		margin-bottom: 35px;
+	}
+
+	&__btn {
+		@include btnLogin;
+	}
+
+	.btn-green {
+		@include btnLoginGreen;
+	}
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	//= partials/head.html
+	<title>Document</title>
+</head>
+<body>
+
+	<section class="main-container">
+
+		//= partials/common/header.html
+
+		<div class="section-body">
+
+			//= partials/common/navigation.html
+
+			<div class="payment-section">
+
+				<h2 class="payment-section__title">payment</h2>
+
+				<form action="#" name="payment-section__form" class="payment-section__form">
+
+					<label for="inputAmount" class="label-title">Amount
+					<span class="currency">&euro;</span>
+					</label>
+					<input type="text" name="inputAmount" class="input-field-pay mb-20" id="inputAmount" placeholder="100">
+
+		        	<label for="payInputEmail" class="label-title">Receipt email</label>
+		        	<input type="email" name="payInputEmail" class="input-field-pay mb-30" id="payInputEmail" placeholder="yerin.roman@gmail.com">
+
+		        	<input class="form-pay-btn" type="submit" name="pay" value="pay">
+				</form>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

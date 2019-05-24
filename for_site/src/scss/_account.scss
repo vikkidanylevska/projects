@@ -1,0 +1,165 @@
+.account-section {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	padding: 35px 40px 60px;
+
+	&__title {
+		font-size: 30px;
+		font-weight: 300;
+		line-height: 1.1;
+		text-transform: capitalize;
+		margin-bottom: 40px;
+	}
+
+	.account-body {
+		display: flex;
+
+		@media all and (max-width: 992px) {
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+	}
+
+	.account-block {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		width: 100%;
+		max-width: 590px;
+		min-height: 380px;
+		background-color: #fff;
+		box-shadow: 0 0 40px rgba(210,216,222,.8);
+
+		&:not(:last-child) {
+			margin-right: 25px;
+
+			@media all and (max-width: 992px) {
+				margin-right: 0;
+				margin-bottom: 30px;
+			}
+		}
+
+		&__list {
+			list-style: none;
+		}
+
+		&__item {
+			border-top: 1px solid $col-gray;
+			min-height: 75px;
+		}
+
+		&__link {
+			display: flex;
+			align-items: center;
+			text-decoration: none;
+			width: 100%;
+			transition: all .3s ease;
+		}
+
+		.account-block__link:hover>.account-block__time {
+				background-color: $col-green;
+				color: #fff;
+				text-decoration: none;
+
+				&::after {
+					 border-left: 20px solid $col-green;
+				}
+			}
+
+		&__time {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			color: $col-green;
+			width: 100px;
+			height: 76px;
+			background-color: $col-lt-green;
+			position: relative;
+			margin-right: 45px;
+			transition: all .3s ease;
+
+			.time {
+				font-size: 24px;
+				font-weight: 300;
+			}
+
+			.data {
+				font-size: 12px;
+				font-weight: 300;
+			}
+
+			&::after {
+				content: "";
+				display: block;
+				position: absolute;
+				top: 0;
+				right: -20px;
+				border-top: 38px solid transparent;
+			    border-left: 20px solid $col-lt-green;
+			    border-bottom: 39px solid transparent;
+			    transition: all .3s ease;
+			}
+		}
+
+		.account-block__link-active {
+
+			.account-block__time {
+				background-color: $col-green;
+				color: #fff;
+
+				&::after {
+					 border-left: 20px solid $col-green;
+				}
+			}
+		}
+
+		&__text {
+			font-size: 14px;
+			font-weight: 600;
+			color: #000;
+		}
+	}
+
+	.top-block {
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 190px;
+		height: 90px;
+		background-color: $col-gray;
+		padding: 15px 20px 15px 25px;
+
+		&__subtitle {
+			font-size: 14px;
+			font-weight: 700;
+			text-transform: uppercase;
+		}
+
+		&__total {
+			font-size: 36px;
+			font-weight: 300;
+			align-self: flex-end;
+		}
+
+		&__currency {
+			font-size: 18px;
+			font-weight: 400;
+			color: #737880;
+		}
+	}
+}
+
+.account-btn-wrapper {
+	display: flex;
+	justify-content: flex-end;
+	padding: 20px 20px 0 0;
+}
+
+.account-btn {
+	@include btnForm ($col-green, 140px);
+}

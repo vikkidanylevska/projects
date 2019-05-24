@@ -1,0 +1,135 @@
+.support-section {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 830px;
+	padding: 35px 40px 230px;
+	position: relative;
+
+	&__title {
+		font-size: 30px;
+		font-weight: 300;
+		line-height: 1.1;
+		text-transform: capitalize;
+		margin-bottom: 40px;
+	}
+
+	.support-img {
+			display: block;
+			position: absolute;
+			top: 34%;
+			left: 39%;
+			width: 100%;
+			max-width: 755px;
+			height: 485px;
+			background: url("../img/support-img.jpg") no-repeat;
+			background-size: contain;
+
+			@media all and (max-width: 1080px) {
+				display: none;
+			}
+
+			@media all and (min-width: 1081px) and (max-width: 1199px) {
+				max-width: 604px;
+				max-height: 388px;
+				top: 40%;
+				left: 45%;
+			}
+		}
+
+	&__form {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		max-width: 750px;
+		background-color: #fff;
+		box-shadow: 0 0 40px rgba(210,216,222,.8);
+		padding: 35px 40px 30px;
+		position: relative;
+		z-index: 1;
+
+		@media all and (max-width: 1080px) {
+			justify-content: center;
+		}
+
+		.send-wrapper {
+			display: flex;
+		}
+
+		.input-send-wrapper {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			max-width: 270px;
+			margin-right: 40px;
+		}
+
+		.label-title {
+			font-size: 14px;
+			font-weight: 600;
+			line-height: 2.4;
+			position: relative;
+		}
+
+		.input-field-send {
+			border: none;
+			font-family: 'Open Sans', sans-serif;
+			color: $col-dark;
+			font-size: 14px;
+			line-height: 1.5;
+			letter-spacing: .7px;
+			background-color: $col-gray;
+			width: 100%;
+			padding: 15px 20px;
+		}
+
+		::-webkit-input-placeholder {color: $col-dark;}
+		::-moz-placeholder          {color: $col-dark;}
+		:-moz-placeholder           {color: $col-dark;}
+		:-ms-input-placeholder      {color: $col-dark;}
+
+		.message-field-wrapper {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+		}
+
+		.message-field {
+			border: none;
+			font-family: 'Open Sans', sans-serif;
+			color: $col-dark;
+			background-color: $col-gray;
+			font-size: 14px;
+			width: 100%;
+			max-width: 360px;
+			min-height: 235px;
+			resize: none;
+			padding: 15px;
+		}
+
+		.form-send-btn {
+			@include btnForm ($col-red, 270px);
+			margin-bottom: 50px;
+		}
+
+		.warning {
+			font-size: 20px;
+
+			&::after {
+				content: " ";
+				display: block;
+				width: 100%;
+				height: 15px;
+				border-bottom: 1.5px solid $col-gray;
+				margin-bottom: 15px;
+			}
+		}
+
+		.warning-text {
+			font-size: 13px;
+			font-style: italic;
+			color: #737880;
+			line-height: 1.8;
+		}
+	}
+}

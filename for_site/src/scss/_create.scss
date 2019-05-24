@@ -1,0 +1,255 @@
+.new-event {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 990px;
+	padding: 35px 40px 60px;
+
+	&__title {
+		font-size: 30px;
+		font-weight: 300;
+		line-height: 1.1;
+		text-transform: capitalize;
+		margin-bottom: 40px;
+	}
+
+	&__form {
+		display: flex;
+		justify-content: flex-end;
+		width: 100%;
+		background-color: #fff;
+		box-shadow: 0 0 40px rgba(210,216,222,.8);
+		padding: 40px;
+		position: relative;
+
+		@media all and (max-width: 1080px) {
+			justify-content: center;
+		}
+
+		.add-picture {
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			max-width: 240px;
+			height: 240px;
+			background-color: $col-gray;
+			text-decoration: none;
+			text-align: center;
+
+			&:hover {
+				background-color: $col-lt-green;
+				transition: all .3s ease;
+			}
+		}
+
+		.plus-circle {
+			margin-bottom: 20px;
+		}
+
+		.plus-text {
+			font-size: 16px;
+			color: $col-dark;
+			text-transform: capitalize;
+		}
+
+		.form-body {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			max-width: 590px;
+		}
+
+		.form-heading-wrapper {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			max-width: 335px;
+			margin-bottom: 25px;
+
+			@media all and (max-width: 1080px) {
+				align-self: center;
+				min-height: 200px;
+				justify-content: center;
+			}
+
+			@media all and (max-width: 960px) {
+				align-self: flex-end;
+			}
+
+			@media all and (min-width: 850px) and (max-width: 960px) {
+				transform: translateX(-20%);
+			}
+		}
+
+		.form-heading {
+			font-size: 20px;
+			font-weight: 400;
+			line-height: .8;
+			text-transform: capitalize;
+			margin-bottom: 15px;
+		}
+
+		.form-text {
+			font-size: 13px;
+			font-weight: 300;
+			font-style: italic;
+			line-height: 1.8;
+			color: $col-txt-gray;
+		}
+
+		.label-title {
+			font-size: 14px;
+			font-weight: 600;
+			line-height: 2.3;
+
+			& > * {
+				color: $col-red;
+				margin-left: 5px;
+			}
+		}
+
+		.input-field {
+			border: none;
+			font-size: 14px;
+			line-height: 1.5;
+			letter-spacing: .7px;
+			background-color: $col-gray;
+			width: 100%;
+			padding: 15px 20px;
+		}
+
+		::-webkit-input-placeholder {color: $col-txt-gray;}
+		::-moz-placeholder          {color: $col-txt-gray;}
+		:-moz-placeholder           {color: $col-txt-gray;}
+		:-ms-input-placeholder      {color: $col-txt-gray;}
+
+		.descr-field {
+			border: none;
+			background-color: $col-gray;
+			font-size: 14px;
+			min-height: 120px;
+			resize: none;
+			padding: 15px;
+		}
+
+		.time-fields-wrapper {
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 20px;
+		}
+
+		.field-start {
+			padding-left: 50px;
+		}
+
+		.create-start-svg {
+			position: absolute;
+			top: 56%;
+			left: 10%;
+		}
+
+		.time-wrapper, .email-wrapper {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			max-width: 175px;
+			position: relative;
+		}
+
+		.email-wrapper {
+			max-width: 383px;
+		}
+
+		.fields-wrapper {
+			display: flex;
+			align-items: flex-end;
+			margin-bottom: 30px;
+
+			& > :first-child {
+				margin-right: 30px;
+			}
+		}
+
+		.email-scnd {
+			justify-content: flex-start;
+			max-width: 340px;
+			margin-right: 14px;
+		}
+
+		.select-wrapper {
+			position: relative;
+
+			&::after {
+				content: " ";
+				position: absolute;
+				border: 3px solid $col-dark;
+				border-left-color: transparent;
+				border-top-color: transparent;
+				transform: rotate(45deg) translateY(-100%);
+				top: 25px;
+				right: 25px;
+				pointer-events: none;
+			}
+
+			.select {
+				font-family: 'Open Sans', sans-serif;
+				overflow: hidden;
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				cursor: pointer;
+			}
+		}
+
+		input[type=checkbox] {
+	    	display: none;
+		}
+
+		input[type=checkbox] + label::before {
+		    content: "\2713";
+		    color: transparent;
+		    background-color: $col-green;
+		    display: inline-block;
+		    font-size: 11px;
+		    height: 15px;
+		    width: 15px;
+		    text-align: center;
+		    cursor: pointer;
+		    margin-right: 13px;
+		}
+
+		input[type=checkbox]:checked + label::before {
+		    color: white;
+		}
+
+		.btn-reset-wrapper {
+			display: flex;
+			align-items: center;
+			width: 45px;
+			height: 50px;
+		}
+
+		.btn-reset {
+			border: none;
+			background: url("../img/btn.svg") no-repeat;
+			width: 31px;
+			height: 31px;
+			cursor: pointer;
+		}
+
+		.check__wrapper {
+			font-size: 13px;
+			letter-spacing: .5px;
+			padding-top: 7px;
+			margin-bottom: 20px;
+		}
+
+		.form-btn {
+			@include btnForm ($col-green, 175px);
+		}
+	}
+}
