@@ -14,8 +14,6 @@
 	}
 
 	&__form {
-		display: flex;
-		flex-direction: column;
 		width: 100%;
 		max-width: 640px;
 		background-color: #fff;
@@ -23,55 +21,43 @@
 		padding: 50px 40px 60px;
 		position: relative;
 
-		&::after {
-			content: " ";
-			display: block;
-			position: absolute;
-			top: 23%;
-			left: 68%;
-			width: 100%;
-			max-width: 522px;
-			height: 100%;
-			max-height: 264px;
-			background: url("../img/cards.png") no-repeat;
-			background-size: contain;
-
-			@media all and (max-width: 899px) {
-				max-width: 261px;
-				max-height: 132px;
-				top: 35%;
-				left: 55%;
-			}
-
-			@media all and (min-width: 900px) and (max-width: 1079px) {
-				max-width: 391px;
-				max-height: 198px;
-				top: 29%;
-				left: 57%;
-			}
-
-			@media all and (min-width: 1080px) and (max-width: 1200px) {
-				max-width: 444px;
-				max-height: 226px;
-				top: 29%;
-				left: 60%;
-			}
-		}
-
 		@media all and (max-width: 1080px) {
 			justify-content: center;
 		}
 
-		.label-title {
+		.input-field-pay-wrapper {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			max-width: 270px;
+
+			@media all and (max-width: 1080px) {
+				flex-direction: row;
+				margin-bottom: 90px;
+				max-width: 560px;
+			}
+		}
+
+		.label-field-pay {
+			display: flex;
+			flex-direction: column;
 			font-size: 14px;
 			font-weight: 600;
 			line-height: 2.3;
+			width: 100%;
 			position: relative;
+
+			&:first-child {
+				@media all and (max-width: 1080px) {
+					margin-right: 20px;
+					margin-bottom: 0;
+				}
+			}
 
 			.currency {
 				position: absolute;
-				top: 125%;
-				left: 43%;
+				top: 50%;
+				right: 7%;
 				color: $col-txt-gray;
 			}
 		}
@@ -85,7 +71,6 @@
 			letter-spacing: .7px;
 			background-color: $col-gray;
 			width: 100%;
-			max-width: 270px;
 			padding: 15px 20px;
 		}
 
@@ -94,8 +79,164 @@
 		:-moz-placeholder           {color: $col-dark;}
 		:-ms-input-placeholder      {color: $col-dark;}
 
+		.front-side, .back-side {
+			width: 100%;
+			max-width: 383px;
+			min-height: 223px;
+			display: flex;
+			position: absolute;
+			padding: 20px 20px 0;
+		}
+
+		.front-side {
+			flex-direction: column;
+			background: url("../img/greencard.jpg") no-repeat;
+			z-index: 2;
+			right: -28%;
+			bottom: 7%;
+
+			@media all and (min-width: 1081px) and (max-width: 1150px) {
+				right: -20%;
+			}
+
+			@media all and (max-width: 1080px) {
+				position: relative;
+				right: 0;
+				bottom: auto;
+				margin-bottom: 70px;
+			}
+		}
+
+		.card-data__label {
+			display: flex;
+			flex-direction: column;
+			font-size: 12px;
+			font-weight: 700;
+			text-transform: uppercase;
+			color: #fff;
+			line-height: .8;
+			letter-spacing: .5px;
+
+			&:not(:nth-child(3)) > span {
+				margin-bottom: 10px;
+			}
+
+			&:first-child {
+				margin-bottom: 50px;
+			}
+
+			&:nth-child(2) {
+				margin-bottom: 20px;
+			}
+
+			&:nth-child(3) {
+				flex-direction: row;
+				align-items: center;
+			}
+
+			.exp-date {
+				margin-right: 10px;
+			}
+
+			.slash {
+				font-size: 10px;
+				margin-right: 6px;
+				align-self: flex-end;
+				line-height: 1.6;
+			}
+		}
+
+		.card-data__input {
+			background-color: transparent;
+			border: none;
+			width: 100%;
+			font-family: 'Open Sans', sans-serif;
+			font-size: 20px;
+			font-weight: 600;
+			text-transform: uppercase;
+			outline: transparent;
+			color: #fff;
+			line-height: 1;
+			letter-spacing: 2px;
+
+
+			&::placeholder {
+				text-transform: uppercase;
+				color: #fff;
+				opacity: .3;
+				letter-spacing: 2px;
+			}
+
+			&__full-name {
+				font-size: 24px;
+			}
+		}
+
+		.card-data-number {
+			letter-spacing: 6px;
+
+			&::placeholder {
+				letter-spacing: 6px;
+			}
+		}
+
+		.card-exp-date {
+			max-width: 23px;
+			font-size: 14px;
+		}
+
+		.visa-img {
+			width: 63px;
+			height: 20px;
+			background-image: url("../img/visa.svg");
+			align-self: flex-end;
+			transform: translate(5%, -75%);
+		}
+
+		.back-side {
+			justify-content: flex-end;
+			background: url("../img/redcard.jpg") no-repeat;
+			z-index: 1;
+			right: -49%;
+			bottom: 16%;
+			padding: 35px 20px;
+
+			@media all and (min-width: 1081px) and (max-width: 1150px) {
+				right: -40%;
+			}
+
+			@media all and (max-width: 1080px) {
+				right: 13%;
+				bottom: 34%;
+			}
+
+			& > label {
+				max-width: 100px;
+				margin-bottom: 0;
+			}
+
+			.cvv-wrapper {
+				background-color: #ea4534;
+				padding: 10px 15px;
+			}
+
+			.card-data-cvv {
+				font-size: 18px;
+				letter-spacing: 5px;
+
+				&::placeholder {
+					font-size: 18px;
+					letter-spacing: 5px;
+				}
+			}
+		}
+
 		.form-pay-btn {
 			@include btnForm ($col-red, 270px);
+
+			@media all and (max-width: 1080px) {
+				margin: 0 auto;
+			}
 		}
 	}
 }

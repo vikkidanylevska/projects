@@ -1,0 +1,8 @@
+.about {
+	background-color: darken($bg-header, 10%);
+	padding: 100px 0;
+
+	&__img {
+	border-radius: 50%;
+	}
+}

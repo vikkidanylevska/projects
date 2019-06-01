@@ -1,0 +1,30 @@
+<header class="header">
+	<div class="container">
+		<nav class="navigation">
+			<div class="row justify-content-center align-items-center">
+				<div class="col-2">
+					<a href="#" class="navigation__brand">VIKKI</a>
+				</div>
+
+				<% const navMenu = ["home","about","rezume","my works","testimonials","contacts"]%>
+
+				<div class="col-9">
+					<ul class="navigation__list">
+
+						<% navMenu.forEach(item => { %>
+						<li class="navigation__item">
+							<a href="#" class="navigation__link py-4"><%=item %>
+							</a>
+						</li>
+						<% }) %>
+
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+</header>
+
+<div class="first-screen">
+	
+</div>

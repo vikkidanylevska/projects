@@ -137,13 +137,50 @@
 
 				<form action="#" name="payment-section__form" class="payment-section__form">
 
-					<label for="inputAmount" class="label-title">Amount
-					<span class="currency">&euro;</span>
-					</label>
-					<input type="text" name="inputAmount" class="input-field-pay mb-20" id="inputAmount" placeholder="100">
+					<div class="input-field-pay-wrapper mb-30">
+						<label class="label-field-pay mb-20">Amount
+						<span class="currency">&euro;</span>
+						<input type="text" name="inputAmount" class="input-field-pay" pattern="[0-9]" placeholder="100" required>
+						</label>
 
-		        	<label for="payInputEmail" class="label-title">Receipt email</label>
-		        	<input type="email" name="payInputEmail" class="input-field-pay mb-30" id="payInputEmail" placeholder="yerin.roman@gmail.com">
+						<label for="payInputEmail" class="label-field-pay">Receipt email
+							<input type="email" name="payInputEmail" class="input-field-pay" id="payInputEmail" placeholder="yerin.roman@gmail.com">
+						</label>
+					</div>
+
+		        	<div class="card-data">
+
+		        		<div class="front-side">
+		        			<label class="card-data__label">
+		        				<span class="holder">holder</span>
+		        				<input type="text" name="fullName" class="card-data__input card-data__full-name" placeholder="full name" required>
+		        			</label>
+
+		        			<label class="card-data__label">
+		        				<span>card number</span>
+		        				<input type="text" name="cardNumber" class="card-data__input card-data-number" placeholder="9999 9999 9999 9999" pattern="[0-9]" required>
+		        			</label>
+
+		        			<label class="card-data__label">
+		        				<span class="exp-date">exp.</span>
+		        				<input type="text" name="cardExpMonth" class="card-data__input card-exp-date" placeholder="01" pattern="[0-9]" maxlength="2" required>
+		        				<span class="slash">/</span>
+		        				<input type="text" name="cardExpYear" class="card-data__input card-exp-date" placeholder="99" pattern="[0-9]" maxlength="2" required>
+		        			</label>
+
+		        			<span class="visa-img"></span>
+
+		        		</div>
+
+		        		<div class="back-side">
+		        			<label class="card-data__label">
+		        				<span>cvv</span>
+		        				<div class="cvv-wrapper">
+		        					<input type="text" name="cardNumber" class="card-data__input card-data-cvv" placeholder="999" pattern="[0-9]" maxlength="3" required>
+		        				</div>
+		        			</label>
+		        		</div>
+		        	</div>
 
 		        	<input class="form-pay-btn" type="submit" name="pay" value="pay">
 				</form>
